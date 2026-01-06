@@ -33,6 +33,7 @@ import bismo from "./bismo_logo.jpg";
 import appifydevs from "./appifydevs_logo.jpg";
 import postman from './tech/postman.png';
 import firebase from './tech/firebase.png';
+import flutter_logo from './flutter_logo.png';
 
 export {
   logo,
@@ -70,4 +71,5 @@ export {
   appifydevs,
   postman,
   firebase,
+  flutter_logo,
 };

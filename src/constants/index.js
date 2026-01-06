@@ -24,6 +24,7 @@ import {
   firstTestimonial,
   secondTestimonial,
   thirdTestimonial,
+  flutter_logo,
 } from '../assets'
 
 
@@ -62,7 +63,7 @@ export const navLinks = [
 const services = [
   {
     title: "Cross-Platform App Developer",
-    icon: web,
+    icon: flutter_logo,
   },
   {
     title: "Full-Stack Developer(Mobile)",
