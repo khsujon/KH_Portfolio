@@ -31,6 +31,7 @@ import secondTestimonial from './image.webp';
 import thirdTestimonial from './third testimonial.webp'
 import bismo from "./bismo_logo.jpg";
 import appifydevs from "./appifydevs_logo.jpg";
+import gowholesome from "./gowholesome.png";
 import postman from './tech/postman.png';
 import firebase from './tech/firebase.png';
 import flutter_logo from './flutter_logo.png';
@@ -72,6 +73,7 @@ export {
   threejs,
   bismo,
   appifydevs,
+  gowholesome,
   postman,
   firebase,
   flutter_logo,

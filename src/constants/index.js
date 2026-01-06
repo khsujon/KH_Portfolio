@@ -34,6 +34,7 @@ import {
 // Import company logos separately
 import bismo from "../assets/bismo_logo.jpg";
 import appifydevs from "../assets/appifydevs_logo.jpg";
+import gowholesome from "../assets/gowholesome.png";
 
 import dart from "../assets/tech/dart.png";
 import flutter from "../assets/tech/flutter.png";
@@ -152,17 +153,32 @@ const technologies = [
 ];
 
 const experiences = [
+  {
+    title: "Full-Stack Mobile App Developer",
+    company_name: "goWholesome Social",
+    icon: gowholesome,
+    iconBg: "#383E56",
+    date: "July 2025 – Present",
+    points: [
+      'Developing goWholesome, a comprehensive social media application enabling users to connect, share, and engage with diverse content.',
+      'Building a robust backend using Node.js, Express.js, and MongoDB to handle user authentication, posts, media uploads, and real-time interactions.',
+      'Implementing a Flutter-based cross-platform frontend for seamless iOS and Android experiences with modern UI/UX design.',
+      'Developing advanced features including image/video posts, chain posts for collaborative contributions, and customizable privacy settings (public, private, and custom).',
+      'Integrating real-time notifications using Socket.IO for in-app messaging and push notifications for user engagement.',
+      'Designing and implementing privacy controls allowing users to manage who can view and interact with their content.',
+    ],
+  },
 
   {
     title: "Flutter Developer",
     company_name: "Bismo",
     icon: bismo,
     iconBg: "#383E56",
-    date: "JAN 2024 – Present",
+    date: "JAN 2024 – June 2025",
     points: [
-      'Spearheading the development of "Zep Core," a Flutter-based MVP mobile application aimed at streamlining event ticket booking and vendor engagement.',
-      'Implementing features such as digital offers, gift cards, and loyalty cards for seamless customer interactions across multiple vendors.',
-      'Collaborating with cross-functional teams to ensure scalable architecture and an intuitive user interface aligned with business goals.'
+      'Spearheaded the development of "Zep Core," a Flutter-based MVP mobile application aimed at streamlining event ticket booking and vendor engagement.',
+      'Implemented features such as digital offers, gift cards, and loyalty cards for seamless customer interactions across multiple vendors.',
+      'Collaborated with cross-functional teams to ensure scalable architecture and an intuitive user interface aligned with business goals.'
     ],
   },
   {
