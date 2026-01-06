@@ -27,6 +27,7 @@ import {
   flutter_logo,
   full_stack_logo,
   node_js_logo,
+  ai_logo,
 } from '../assets'
 
 
@@ -77,7 +78,7 @@ const services = [
   },
   {
     title: "AI/ML Enthusiast",
-    icon: creator,
+    icon: ai_logo,
   },
 ];
 

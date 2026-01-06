@@ -36,6 +36,7 @@ import firebase from './tech/firebase.png';
 import flutter_logo from './flutter_logo.png';
 import full_stack_logo from './full_stack_logo.png';
 import node_js_logo from './node_js_logo.png';
+import ai_logo from './ai_logo.png';
 
 export {
   logo,
@@ -76,4 +77,5 @@ export {
   flutter_logo,
   full_stack_logo,
   node_js_logo,
+  ai_logo,
 };
