@@ -34,6 +34,8 @@ import appifydevs from "./appifydevs_logo.jpg";
 import postman from './tech/postman.png';
 import firebase from './tech/firebase.png';
 import flutter_logo from './flutter_logo.png';
+import full_stack_logo from './full_stack_logo.png';
+import node_js_logo from './node_js_logo.png';
 
 export {
   logo,
@@ -72,4 +74,6 @@ export {
   postman,
   firebase,
   flutter_logo,
+  full_stack_logo,
+  node_js_logo,
 };

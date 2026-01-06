@@ -25,6 +25,8 @@ import {
   secondTestimonial,
   thirdTestimonial,
   flutter_logo,
+  full_stack_logo,
+  node_js_logo,
 } from '../assets'
 
 
@@ -67,11 +69,11 @@ const services = [
   },
   {
     title: "Full-Stack Developer(Mobile)",
-    icon: mobile,
+    icon: full_stack_logo,
   },
   {
     title: "Backend Engineer(Node.js)",
-    icon: backend,
+    icon: node_js_logo,
   },
   {
     title: "AI/ML Enthusiast",
