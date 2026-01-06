@@ -156,6 +156,7 @@ const experiences = [
   {
     title: "Full-Stack Mobile App Developer",
     company_name: "goWholesome Social",
+    location: "Maryland, USA",
     icon: gowholesome,
     iconBg: "#383E56",
     date: "July 2025 – Present",
@@ -172,6 +173,7 @@ const experiences = [
   {
     title: "Flutter Developer",
     company_name: "Bismo",
+    location: "Dhaka, Bangladesh",
     icon: bismo,
     iconBg: "#383E56",
     date: "JAN 2024 – June 2025",
@@ -184,6 +186,7 @@ const experiences = [
   {
     title: "Jr. Software Engineer (Flutter)",
     company_name: "AppifyDevs",
+    location: "Dhaka, Bangladesh",
     icon: appifydevs,
     iconBg: "#E6DEDD",
     date: "Oct 2024 – Dec 2024",

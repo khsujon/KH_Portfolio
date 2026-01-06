@@ -4,6 +4,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
+import { MdLocationOn } from "react-icons/md";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -39,6 +40,13 @@ const ExperienceCard = ({ experience }) => {
           style={{ margin: 0 }}
         >
           {experience.company_name}
+        </p>
+        <p
+          className='text-secondary text-[14px] font-normal flex items-center gap-1'
+          style={{ margin: 0 }}
+        >
+          <MdLocationOn className="text-[16px]" />
+          {experience.location}
         </p>
       </div>
 
