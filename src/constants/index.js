@@ -32,6 +32,8 @@ import {
 
 import goWholesomeBanner from '../assets/projects/goWholesome/goWholesome_banner.png';
 import goWholesome2 from '../assets/projects/goWholesome/gw_2.png';
+import echoGptDashboard from '../assets/projects/echogpt/EchoGpt_dashboard.png';
+import echoGpt2 from '../assets/projects/echogpt/EchoGpt_2.png';
 
 
 // Import company logos separately
@@ -257,24 +259,29 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "GearXpert",
+    name: "Echo GPT",
     description:
-      "GearXpert is your ultimate destination for premium auto parts and accessories, Whether you're an automobile enthusiast or a professional, find everything you need to upgrade, repair.",
+      "An AI-powered chatbot application integrating multiple AI APIs including ChatGPT, Gemini, Claude, Qwen, and Llama. Features include user authentication (login/signup), chat history management, and premium subscription options for accessing advanced AI models. Currently live on Google Play Store, providing users with a versatile AI assistant experience.",
     tags: [
       {
-        name: "react",
+        name: "flutter",
         color: "blue-text-gradient",
       },
       {
-        name: "emailJs",
+        name: "AI APIs",
         color: "green-text-gradient",
       },
       {
-        name: "Gsap",
+        name: "firebase",
         color: "pink-text-gradient",
       },
+      {
+        name: "playstore",
+        color: "white-text-gradient",
+      },
     ],
-    image: gearXpert,
+    images: [echoGptDashboard, echoGpt2],
+    image: echoGptDashboard,
     source_code_link: "https://github.com/",
   },
   {
