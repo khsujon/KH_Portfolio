@@ -235,7 +235,7 @@ const projects = [
   {
     name: "goWholesome Social",
     description:
-      "A comprehensive social media platform enabling users to connect, share, and engage with diverse content. Features include image/video posts, chain posts for collaborative contributions, customizable privacy settings (public, private, custom), and real-time notifications using Socket.IO.",
+      "A comprehensive social media platform enabling users to connect, share, and engage with diverse content. Features include image/video posts, chain posts for collaborative contributions, customizable privacy settings (public, private, custom), and real-time notifications using Socket.IO. Currently live on Google Play Store and Apple App Store.",
     tags: [
       {
         name: "flutter",
@@ -252,6 +252,14 @@ const projects = [
       {
         name: "socket.io",
         color: "white-text-gradient",
+      },
+      {
+        name: "playstore",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "appstore",
+        color: "pink-text-gradient",
       },
     ],
     images: [goWholesomeBanner, goWholesome2],
