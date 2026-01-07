@@ -30,6 +30,9 @@ import {
   ai_logo,
 } from '../assets'
 
+import goWholesomeBanner from '../assets/projects/goWholesome/goWholesome_banner.png';
+import goWholesome2 from '../assets/projects/goWholesome/gw_2.png';
+
 
 // Import company logos separately
 import bismo from "../assets/bismo_logo.jpg";
@@ -228,29 +231,29 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Tekisky Mart",
+    name: "goWholesome Social",
     description:
-      "Tekisky Mart is a web-based platform that allows users to search, explore, and purchase a wide range of products from various providers, offering a seamless and efficient shopping experience.",
+      "A comprehensive social media platform enabling users to connect, share, and engage with diverse content. Features include image/video posts, chain posts for collaborative contributions, customizable privacy settings (public, private, custom), and real-time notifications using Socket.IO.",
     tags: [
       {
-        name: "react",
+        name: "flutter",
         color: "blue-text-gradient",
       },
       {
-        name: "tailwind",
-        color: "white-text-gradient",
-      },
-      {
-        name: "node",
-        color: "pink-text-gradient",
+        name: "node.js",
+        color: "green-text-gradient",
       },
       {
         name: "mongodb",
-        color: "green-text-gradient",
+        color: "pink-text-gradient",
       },
- 
+      {
+        name: "socket.io",
+        color: "white-text-gradient",
+      },
     ],
-    image: project2,
+    images: [goWholesomeBanner, goWholesome2],
+    image: goWholesomeBanner,
     source_code_link: "https://github.com/",
   },
   {

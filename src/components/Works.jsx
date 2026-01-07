@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Tilt } from "react-tilt";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,9 +17,14 @@ const ProjectCard = ({
   description,
   tags,
   image,
+  images,
   source_code_link,
 }) => {
   const cardRef = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const projectImages = images || [image];
 
   useEffect(() => {
     const el = cardRef.current;
@@ -45,22 +50,45 @@ const ProjectCard = ({
     );
   }, []);
 
+  // Auto-scroll images
+  useEffect(() => {
+    if (projectImages.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => 
+          (prevIndex + 1) % projectImages.length
+        );
+      }, 3000); // Change image every 3 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [projectImages.length]);
+
+  const shouldShowButton = description.length > 150;
+  const displayDescription = !isExpanded && shouldShowButton 
+    ? description.substring(0, 150) + "..." 
+    : description;
+
   return (
-    <div ref={cardRef}>
+    <div ref={cardRef} className="h-full">
       <Tilt
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-full flex flex-col"
       >
-        <div className="relative w-full h-[230px]">
-          <img
-            src={image}
-            alt="project_image"
-            className="w-full h-full object-cover object-left rounded-2xl"
-          />
+        <div className="relative w-full h-[280px] overflow-hidden">
+          {projectImages.map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              alt={`project_image_${idx}`}
+              className={`absolute top-0 left-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 ${
+                idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
@@ -74,14 +102,42 @@ const ProjectCard = ({
               />
             </div>
           </div>
+
+          {/* Image indicators */}
+          {projectImages.length > 1 && (
+            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+              {projectImages.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    idx === currentImageIndex 
+                      ? 'bg-white w-6' 
+                      : 'bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 flex-grow flex flex-col">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <div className={`mt-2 ${isExpanded ? 'max-h-[200px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-tertiary' : ''}`}>
+            <p className="text-secondary text-[14px]">{displayDescription}</p>
+          </div>
+          
+          {shouldShowButton && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="mt-3 text-[#915EFF] text-[14px] font-semibold hover:text-white transition-colors self-start"
+            >
+              {isExpanded ? "Show Less" : "See Details"}
+            </button>
+          )}
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className={`mt-4 flex flex-wrap gap-2 ${isExpanded ? 'max-h-[100px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-tertiary' : ''}`}>
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
