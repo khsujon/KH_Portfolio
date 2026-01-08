@@ -293,24 +293,24 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "GoGroove-Ecommerce",
+    name: "Talkie",
     description:
-      "Go-Groove is your ultimate destination for premium products across various categories. Whether you're a savvy shopper or a professional, enhance, and simplify your lifestyle—all in one place!",
+      "A feature-rich real-time chatting application enabling seamless communication between users. Features include email/password and Google Sign-In authentication, real-time messaging with image and emoji support, online/offline status indicators, last seen timestamps, message delivery reports, and the ability to unsend and edit messages. Built entirely on Firebase for backend services, with integrated push notifications and real-time updates for an instant messaging experience.",
     tags: [
       {
-        name: "react",
+        name: "flutter",
         color: "blue-text-gradient",
       },
       {
-        name: "express",
+        name: "firebase",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "real-time",
         color: "white-text-gradient",
       },
       {
-        name: "node",
-        color: "green-text-gradient",
-      },
-      {
-        name: "mongodb",
+        name: "chat",
         color: "green-text-gradient",
       },
     ],
