@@ -123,16 +123,88 @@ const ProjectCard = ({
 
         <div className="mt-5 flex-grow flex flex-col">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <div className={`mt-2 ${isExpanded ? 'max-h-[200px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-tertiary' : ''}`}>
-            <p className="text-secondary text-[14px]">{displayDescription}</p>
+          <div className={`mt-2 ${isExpanded ? 'max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-500 scrollbar-track-tertiary pr-2' : 'max-h-[120px] overflow-hidden'}`}>
+            <div className="text-secondary text-[13px] leading-relaxed space-y-3">
+              {description.split('\\n\\n').map((section, idx) => {
+                // Check if section starts with **
+                if (section.includes('**')) {
+                  const parts = section.split('**');
+                  return (
+                    <div key={idx} className="space-y-1.5">
+                      {parts.map((part, partIdx) => {
+                        if (partIdx % 2 === 1) {
+                          // Bold text
+                          return <strong key={partIdx} className="text-white font-semibold">{part}</strong>;
+                        } else if (part.includes('•')) {
+                          // Bullet points
+                          const lines = part.split('\\n').filter(line => line.trim());
+                          return (
+                            <ul key={partIdx} className="space-y-1 ml-4">
+                              {lines.map((line, lineIdx) => {
+                                if (line.includes('•')) {
+                                  const content = line.replace('•', '').trim();
+                                  // Parse inline bold within bullet points
+                                  const boldParts = content.split('**');
+                                  return (
+                                    <li key={lineIdx} className="flex items-start">
+                                      <span className="text-[#915EFF] mr-2">•</span>
+                                      <span>
+                                        {boldParts.map((bp, bpIdx) => 
+                                          bpIdx % 2 === 1 ? 
+                                            <strong key={bpIdx} className="text-white font-semibold">{bp}</strong> : 
+                                            bp
+                                        )}
+                                      </span>
+                                    </li>
+                                  );
+                                }
+                                return <span key={lineIdx}>{line}</span>;
+                              })}
+                            </ul>
+                          );
+                        } else if (part.includes('|')) {
+                          // Tech stack with pipes
+                          const techs = part.split('|').map(t => t.trim()).filter(t => t);
+                          return (
+                            <div key={partIdx} className="flex flex-wrap gap-2">
+                              {techs.map((tech, techIdx) => {
+                                const cleanTech = tech.replace(/\*\*/g, '');
+                                return (
+                                  <span key={techIdx} className="bg-[#915EFF]/10 text-white px-2 py-1 rounded text-[11px] font-medium border border-[#915EFF]/20">
+                                    {cleanTech}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          );
+                        } else {
+                          return <span key={partIdx}>{part}</span>;
+                        }
+                      })}
+                    </div>
+                  );
+                }
+                return <p key={idx}>{section}</p>;
+              })}
+            </div>
           </div>
           
-          {shouldShowButton && (
+          {(description.length > 400 || description.split('\\n').length > 8) && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="mt-3 text-[#915EFF] text-[14px] font-semibold hover:text-white transition-colors self-start"
+              className="mt-3 text-[#915EFF] text-[13px] font-semibold hover:text-white transition-colors self-start flex items-center gap-1"
             >
-              {isExpanded ? "Show Less" : "See Details"}
+              {isExpanded ? (
+                <>
+                  <span>Show Less</span>
+                  <span className="text-[10px]">▲</span>
+                </>
+              ) : (
+                <>
+                  <span>See Full Details</span>
+                  <span className="text-[10px]">▼</span>
+                </>
+              )}
             </button>
           )}
         </div>
