@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { styles } from "../styles";
-import { github } from "../assets";
+import { github, playstoreIcon, appstoreIcon, githubIcon } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 
@@ -19,6 +19,7 @@ const ProjectCard = ({
   image,
   images,
   source_code_link,
+  storeLinks,
 }) => {
   const cardRef = useRef(null);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -90,18 +91,41 @@ const ProjectCard = ({
             />
           ))}
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
+          {/* Store Links Icons */}
+          {storeLinks && storeLinks.length > 0 && (
+            <div className="absolute top-3 right-3 flex gap-2">
+              {storeLinks.map((link, idx) => {
+                const getIcon = () => {
+                  switch(link.type) {
+                    case 'playstore': return playstoreIcon;
+                    case 'appstore': return appstoreIcon;
+                    case 'github': return githubIcon;
+                    default: return null;
+                  }
+                };
+                
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => window.open(link.url, "_blank")}
+                    className="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer transition-all hover:scale-110 backdrop-blur-sm"
+                    title={link.type.charAt(0).toUpperCase() + link.type.slice(1)}
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 100%)',
+                      boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3)',
+                      border: '1px solid rgba(255, 255, 255, 0.18)',
+                    }}
+                  >
+                    <img
+                      src={getIcon()}
+                      alt={link.type}
+                      className="w-6 h-6 object-contain"
+                    />
+                  </div>
+                );
+              })}
             </div>
-          </div>
+          )}
 
           {/* Image indicators */}
           {projectImages.length > 1 && (

@@ -23,6 +23,9 @@ import flutter_logo from './flutter_logo.png';
 import full_stack_logo from './full_stack_logo.png';
 import node_js_logo from './node_js_logo.png';
 import ai_logo from './ai_logo.png';
+import playstoreIcon from './store_icon/google-play-store-icon.png';
+import appstoreIcon from './store_icon/app-store-icon.png';
+import githubIcon from './store_icon/github.png';
 
 export {
   logo,
@@ -50,4 +53,7 @@ export {
   full_stack_logo,
   node_js_logo,
   ai_logo,
+  playstoreIcon,
+  appstoreIcon,
+  githubIcon,
 };

@@ -257,6 +257,10 @@ const projects = [
     images: [goWholesomeBanner, goWholesome2],
     image: goWholesomeBanner,
     source_code_link: "https://github.com/",
+    storeLinks: [
+      { type: 'playstore', url: 'https://play.google.com/store/apps/details?id=com.gowholesomesocial.gowholesome' },
+      { type: 'appstore', url: 'https://apps.apple.com/us/app/gowholesome/id6752258613' },
+    ],
   },
   {
     name: "Echo GPT",
@@ -283,6 +287,9 @@ const projects = [
     images: [echoGptDashboard, echoGpt2],
     image: echoGptDashboard,
     source_code_link: "https://github.com/",
+    storeLinks: [
+      { type: 'playstore', url: 'https://play.google.com/store/apps/details?id=com.echogpt.chatapp' },
+    ],
   },
   {
     name: "Talkie",
@@ -308,7 +315,10 @@ const projects = [
     ],
     images: [talkie1, talkie2],
     image: talkie1,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/khsujon/Talkie-chatting-app",
+    storeLinks: [
+      { type: 'github', url: 'https://github.com/khsujon/Talkie-chatting-app' },
+    ],
   },
 ];
 
