@@ -31,6 +31,13 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    // Debug: Check if environment variables are loaded
+    console.log('EmailJS Config:', {
+      serviceId: import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+      templateId: import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+      publicKey: import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+    });
+
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -57,7 +64,8 @@ const Contact = () => {
         },
         (error) => {
           setLoading(false);
-          console.error(error);
+          console.error('EmailJS Error:', error);
+          console.error('Error details:', error.text, error.status);
 
           alert("Ahh, something went wrong. Please try again.");
         }
