@@ -34,6 +34,8 @@ import goWholesomeBanner from '../assets/projects/goWholesome/goWholesome_banner
 import goWholesome2 from '../assets/projects/goWholesome/gw_2.png';
 import echoGptDashboard from '../assets/projects/echogpt/EchoGpt_dashboard.png';
 import echoGpt2 from '../assets/projects/echogpt/EchoGpt_2.png';
+import talkie1 from '../assets/projects/Talkie/1.png';
+import talkie2 from '../assets/projects/Talkie/2.png';
 
 
 // Import company logos separately
@@ -314,7 +316,8 @@ const projects = [
         color: "green-text-gradient",
       },
     ],
-    image: project3,
+    images: [talkie1, talkie2],
+    image: talkie1,
     source_code_link: "https://github.com/",
   },
 ];
