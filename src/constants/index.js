@@ -1,18 +1,8 @@
 import {
-  backend,
-  creator,
-  mobile,
-  web,
-
   postman,
   firebase,
   github,
-  menu,
-  close,
   css,
-  gearXpert,
-  project2,
-  project3,
   mysql,
   figma,
   git,
