@@ -14,6 +14,7 @@ import {
   firstTestimonial,
   secondTestimonial,
   thirdTestimonial,
+  fourthTestimonial,
   flutter_logo,
   full_stack_logo,
   node_js_logo,
@@ -199,27 +200,35 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Huzaif proved me wrong.",
-    name: "MD Mustaqeem",
-    designation: "Ecommerce",
-    company: "QuickMart",
+      "Kamrul has been an exceptional addition to our team at goWholesome. His dedication and sense of ownership toward our product are truly remarkable. What impresses me most is his ability to learn quickly and adapt to new challenges. He doesn't just complete tasks—he takes full responsibility for the product's success. His work ethic and commitment have exceeded all expectations.",
+    name: "Ahsan Sadaf",
+    designation: "CEO",
+    company: "goWholesome",
     image: firstTestimonial,
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Huzaif does.",
-    name: "Abdul Raheman",
-    designation: "Ecommerce Business",
-    company: "justbuyz",
+      "I've had the privilege of working with Kamrul at both goWholesome and Bismo as his CTO. His fast-paced delivery and exceptional bug-fixing skills consistently exceeded expectations. What truly sets him apart is his ability to quickly adapt to new technologies and frameworks. Whether it's implementing complex features or troubleshooting critical issues, Kamrul delivers with speed and precision. A valuable technical asset to any team.",
+    name: "Aukik Aurnab",
+    designation: "Co-Founder & CTO",
+    company: "AI Buddy Catalyst Labs Inc.",
     image: secondTestimonial,
   },
   {
     testimonial:
-      "After Huzaif optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "James Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
+      "Kamrul joined AppifyDevs as a fresher, and his dedication from day one was extraordinary. Despite being new to the industry, he demonstrated remarkable work ethic and willingness to learn. His commitment to delivering quality work and going the extra mile impressed the entire team. Watching him grow and contribute meaningfully to our projects has been incredibly rewarding. A hardworking professional with immense potential.",
+    name: "Abdus Sami",
+    designation: "CEO",
+    company: "AppifyDevs",
     image: thirdTestimonial,
+  },
+  {
+    testimonial:
+      "Working with Kamrul on our fintech applications at Bismo was a game-changer. He approached every project with exceptional dedication and took complete ownership of his responsibilities. His understanding of complex financial systems and ability to deliver secure, robust solutions impressed me greatly. Kamrul's commitment to excellence and his proactive approach to problem-solving made him an invaluable member of our development team.",
+    name: "Safat Jamil",
+    designation: "Founder & CEO",
+    company: "Bismo",
+    image: fourthTestimonial,
   },
 ];
 

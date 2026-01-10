@@ -11,9 +11,10 @@ import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import tailwind from "./tech/tailwind.png";
-import firstTestimonial from './Tars Ken.webp';
-import secondTestimonial from './image.webp';
-import thirdTestimonial from './third testimonial.webp'
+import firstTestimonial from './testimoy/sadaf.png';
+import secondTestimonial from './testimoy/aukik.png';
+import thirdTestimonial from './testimoy/sami.png';
+import fourthTestimonial from './testimoy/safat.png';
 import bismo from "./bismo_logo.jpg";
 import appifydevs from "./appifydevs_logo.jpg";
 import gowholesome from "./gowholesome.png";
@@ -37,6 +38,7 @@ export {
   firstTestimonial,
   secondTestimonial,
   thirdTestimonial,
+  fourthTestimonial,
   figma,
   git,
   html,
